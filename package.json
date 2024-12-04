@@ -1,0 +1,27 @@
+{
+  "name": "@fnmain/qrcode",
+  "version": "1.0.0",
+  "description": "qrcode utils",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node dist/test.js",
+    "pub": "npm run build && npm publish --access public --registry=https://registry.npmjs.org/ && node sync-npmmirror.js "
+  },
+  "author": "DC",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.8.3",
+    "@types/qrcode": "^1.5.5",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "jsqr": "^1.4.0",
+    "qrcode": "^1.5.4"
+  }
+}
