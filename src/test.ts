@@ -1,5 +1,5 @@
 import path from "path";
-import { generateQrCodeFile, generateQrCodeDataUrl } from "./index";
+import { generateQrCodeFile, generateQrCodeDataUrl, isValidWeChatContact } from "./index";
 
 async function test() {
   // Test file generation
@@ -12,6 +12,8 @@ async function test() {
   // Test data URL generation
   const dataUrl = await generateQrCodeDataUrl(testText);
   console.log("QR code data URL generated:", dataUrl);
+
+  console.log(isValidWeChatContact("https://u.wechat.com/JEC53CF4sRMLlOa-GSQz74p"));
 }
 
 test();

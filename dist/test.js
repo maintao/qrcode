@@ -24,6 +24,7 @@ function test() {
         // Test data URL generation
         const dataUrl = yield (0, index_1.generateQrCodeDataUrl)(testText);
         console.log("QR code data URL generated:", dataUrl);
+        console.log((0, index_1.isValidWeChatContact)("https://u.wechat.com/JEC53CF4sRMLlOa-GSQz74p"));
     });
 }
 test();
