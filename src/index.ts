@@ -12,7 +12,7 @@ export async function generateQrCodeFile(
     errorCorrectionLevel: "H",
     margin: 1,
     scale: 8,
-  }
+  },
 ): Promise<void> {
   await QRCode.toFile(outputPath, text, options as QRCodeToFileOptions);
 }
@@ -30,16 +30,21 @@ export async function generateQrCodeDataUrl(text: string): Promise<string> {
 }
 
 /**
- * Check if the QR code is a valid WeChat contact QR code
+ * Check if the QR code is a valid WeChat / Business WeChat contact QR code
  * @param qrcode QR code to check
  */
 export function isValidWeChatContact(qrcode: string): boolean {
-  // ex: https://u.wechat.com/JEC53CF4sRMLlOa-GSQz74p
+  // ex: https://u.wechat.com/xxxxxxxxxxxxxxx-xxxxxxx
+  // ex: https://work.weixin.qq.com/u/xxxxxxxxxxxxxxxxxx?v=5.0.8.218278&bb=xxxxxxxxxx
   if (!qrcode) {
     return false;
   }
   if (qrcode.length < 36) {
     return false;
   }
-  return qrcode.startsWith("https://u.wechat.com/");
+
+  let isValidWeChatContact = qrcode.startsWith("https://u.wechat.com/");
+  let isValidBusinessWeChatContact = qrcode.startsWith("https://work.weixin.qq.com/u/");
+
+  return isValidWeChatContact || isValidBusinessWeChatContact;
 }

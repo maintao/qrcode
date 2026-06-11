@@ -10,7 +10,7 @@ export declare function generateQrCodeFile(text: string, outputPath: string, opt
  */
 export declare function generateQrCodeDataUrl(text: string): Promise<string>;
 /**
- * Check if the QR code is a valid WeChat contact QR code
+ * Check if the QR code is a valid WeChat / Business WeChat contact QR code
  * @param qrcode QR code to check
  */
 export declare function isValidWeChatContact(qrcode: string): boolean;

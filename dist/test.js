@@ -24,7 +24,9 @@ function test() {
         // Test data URL generation
         const dataUrl = yield (0, index_1.generateQrCodeDataUrl)(testText);
         console.log("QR code data URL generated:", dataUrl);
-        console.log((0, index_1.isValidWeChatContact)("https://u.wechat.com/JEC53CF4sRMLlOa-GSQz74p"));
+        console.log((0, index_1.isValidWeChatContact)("https://maintao.com"));
+        console.log((0, index_1.isValidWeChatContact)("https://u.wechat.com/xxxxxxxxxxxxxxx-xxxxxxx"));
+        console.log((0, index_1.isValidWeChatContact)("https://work.weixin.qq.com/u/xxxxxxxxxxxxxxxxxx?v=5.0.8.218278&bb=xxxxxxxxxx"));
     });
 }
 test();
